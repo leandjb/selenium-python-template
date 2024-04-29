@@ -26,7 +26,7 @@ def test_checkbox(browser):
     checkbox_burger.click()
 
 
-@pytest.mark.search
+@pytest.mark.checkbox_burger
 def test_checkbox_2(browser):
     container_checkbox = browser.find_element(By.CLASS_NAME, "mt-3")
     checkbox_burger = browser.find_element(By.ID, "checkbox-1")
