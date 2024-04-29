@@ -11,8 +11,7 @@ class BasePage:
             expected_conditions.presence_of_element_located(locator))
 
     def click_element(self, locator):
-        element = self.wait_for_element(locator)
-        element.click()
+        self.wait_for_element(locator).click()
 
     def navigate_to_url(self, url):
         self.driver.get(url)

@@ -1,6 +1,6 @@
 import pytest
-from selenium.webdriver.firefox import webdriver
-# from selenium.webdriver.Chrome import webdriver
+# from selenium.webdriver.firefox import webdriver
+from selenium.webdriver.chrome import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from src.pages.sandbox_page import SandboxPage
 
