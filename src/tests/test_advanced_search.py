@@ -9,7 +9,7 @@ from selenium.webdriver import ActionChains
 @pytest.fixture
 def browser():
     driver = webdriver.WebDriver()
-    driver.implicitly_wait(10)
+    driver.implicitly_wait(4)
     driver.get(
         "https://thefreerangetester.github.io/sandbox-automation-testing/")
     # driver.maximize_window()
@@ -33,10 +33,11 @@ def test_checkbox_2(browser):
     checkbox_burger.click()
 
 
-@pytest.mark.hover
+@pytest.mark.hoveronbutton
 def test_hover_enviar_button(browser):
     button = WebDriverWait(browser, 10).until(EC.presence_of_element_located(
-        (By.CSS_SELECTOR, "button.btn:nth-child(5)")))
+        # (By.CSS_SELECTOR, "button.btn:nth-child(5)")))
+        (By.XPATH, "//button[contains(text(),'Enviar')]")))
 
     color_before_hover = button.value_of_css_property("background-color")
 
