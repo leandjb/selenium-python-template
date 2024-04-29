@@ -1,3 +1,4 @@
+from selenium.webdriver import ActionChains
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
@@ -40,3 +41,9 @@ class BasePage:
         checkbox = self.wait_for_element(locator)
         if checkbox.is_selected():
             checkbox.click()
+
+    def hover_over_element(self, locator):
+        element = self.wait_for_element(locator)
+        ActionChains(self.driver).move_to_element(element).perform()
+
+
